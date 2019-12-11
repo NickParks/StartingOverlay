@@ -1,0 +1,32 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+
+.chatText {
+    animation: MoveUp 7s linear;
+    animation-iteration-count: 1;
+    position: absolute;
+}
+
+.chatImage {
+    animation: MoveUp 5s linear;
+    animation-iteration-count: 1;
+    position: absolute;
+    width: 64;
+    height: 64;
+}
+  
+@keyframes MoveUp {
+    0% {
+        bottom: 20%;
+    }
+    50% {
+        bottom: 50%;
+        opacity: 100%;
+    }
+    100% {
+        bottom: 95%;
+        opacity: 0%;
+    }
+}
