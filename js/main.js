@@ -9,7 +9,7 @@ function spawnText(textContent) {
     document.body.appendChild(newText);
 
     newText.addEventListener("webkitAnimationEnd", () => {
-        //newText.remove();
+        newText.remove();
     });
 }
 

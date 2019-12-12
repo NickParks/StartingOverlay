@@ -19,7 +19,6 @@ async function start() {
         }
 
         if (parsedMessage.event == "ChatMessage") {
-            console.log(parsedMessage.data.message);
             if (parsedMessage.data.message.meta.is_skill) {
                 spawnImage(parsedMessage.data.message.meta.skill.icon_url);
             } else {
@@ -40,13 +39,10 @@ function buildMessage(messageArray) {
             finalMessage += messageArray[x].text.trim();
         } else if (messageArray[x].type == "emoticon") {
             let emoteStyle = getMixerEmoteStyle(messageArray[x].coords, messageArray[x].pack);
-            console.log(emoteStyle);
-
-            finalMessage += `<span style="display='${emoteStyle.display}';width='${emoteStyle.width}';height='${emoteStyle.height}';backgroundImage='${emoteStyle.backgroundImage}';backgroundPosition='${emoteStyle.backgroundPosition}'"></span>`
+            finalMessage += `<span style="display:${emoteStyle.display};width:${emoteStyle.width};height:${emoteStyle.height};background-image:${emoteStyle.backgroundImage};background-position:${emoteStyle.backgroundPosition}"></span>`
         }
     }
 
-    console.log(finalMessage);
     return finalMessage.trim()
 }
 
