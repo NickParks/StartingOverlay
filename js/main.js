@@ -1,16 +1,15 @@
 function spawnText(textContent) {
     let newText = document.createElement("div");
-    let newTextContent = document.createTextNode(textContent);
 
     newText.classList.add("chatText");
-    newText.appendChild(newTextContent);
-
     newText.style.left = getRandom(0, window.innerWidth) + 'px';
+
+    newText.innerHTML = textContent;
 
     document.body.appendChild(newText);
 
     newText.addEventListener("webkitAnimationEnd", () => {
-        newText.remove();
+        //newText.remove();
     });
 }
 
@@ -29,6 +28,19 @@ function spawnImage(url) {
         newText.remove();
     });
 }
+
+const getMixerEmoteStyle = (emote, url) => {
+    const newX = emote.x === 0 ? emote.x : `-${emote.x}`;
+    const newY = emote.y === 0 ? emote.y : `-${emote.y}`;
+
+    return {
+        display: "block",
+        width: `${emote.width}px`,
+        height: `${emote.height}px`,
+        backgroundImage: `url(${url})`,
+        backgroundPosition: `${newX}px ${newY}px`,
+    };
+};
 
 function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
