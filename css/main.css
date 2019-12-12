@@ -7,6 +7,7 @@ body {
     animation: MoveUp 7s linear;
     animation-iteration-count: 1;
     position: absolute;
+    max-width: 10%;
 }
 
 .chatImage {
