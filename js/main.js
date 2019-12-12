@@ -29,12 +29,13 @@ function spawnImage(url) {
     });
 }
 
+//Credit: R4ver (https://mixer.com/R4ver)
 const getMixerEmoteStyle = (emote, url) => {
     const newX = emote.x === 0 ? emote.x : `-${emote.x}`;
     const newY = emote.y === 0 ? emote.y : `-${emote.y}`;
 
     return {
-        display: "block",
+        display: "inline-block",
         width: `${emote.width}px`,
         height: `${emote.height}px`,
         backgroundImage: `url(${url})`,

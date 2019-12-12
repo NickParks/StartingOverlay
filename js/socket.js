@@ -39,7 +39,7 @@ function buildMessage(messageArray) {
             finalMessage += messageArray[x].text.trim();
         } else if (messageArray[x].type == "emoticon") {
             let emoteStyle = getMixerEmoteStyle(messageArray[x].coords, messageArray[x].pack);
-            finalMessage += `<span style="display:${emoteStyle.display};width:${emoteStyle.width};height:${emoteStyle.height};background-image:${emoteStyle.backgroundImage};background-position:${emoteStyle.backgroundPosition}"></span>`
+            finalMessage += ` <span style="display:${emoteStyle.display};width:${emoteStyle.width};height:${emoteStyle.height};background-image:${emoteStyle.backgroundImage};background-position:${emoteStyle.backgroundPosition}"></span> `
         }
     }
 
